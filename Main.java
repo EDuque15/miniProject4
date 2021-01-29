@@ -14,8 +14,11 @@ class Main {
     int amountFollowers2 = scan.nextInt();
 
     int followers = getFollowers(amountFollowers, amountFollowers2);
-    System.out.println("There has been " + followers + " followers added to your account.");
-    System.out.println(thanks(name));
+    
+    System.out.println("There are " + followers + " followers ready to be added to your account.");
+    System.out.println(where(name));
+    String where = scan.next();
+    System.out.println(thanks(followers, where));
   }
 
   //getFollowers method caculated how mann followers the person will gain
@@ -25,10 +28,16 @@ class Main {
     return followers;
   }
   
-  //thanks method gives thanks to the person who were on the website
-  static String thanks(String name)
+  //where method takes in info on what platform to give the followers on.
+  static String where(String name)
   {
-    String thanks = "Thanks for using GainFollowers.com, " + name;
-    return thanks;
+    String where = ("On what Social media platform would you like us to add your followers " + name + "?");
+    return where;
+  }
+  
+  //thanks method gives thanks to the person using the website.
+  static String thanks(int followers, String where)
+  {
+    String thanks = ("Perfect! " + followers + " followers have been added to your " + where + " account. Thanks for using our website!");return thanks;
   }
 }
